@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b0faac3-1679-4d05-a7be-2318581cd453" name="Changes" comment="" />
+    <list default="true" id="2b0faac3-1679-4d05-a7be-2318581cd453" name="Changes" comment="Create Menu to My Application">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/DatabaseConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/entity/Breed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/entity/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/MenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/buttons/breedbuttons/AllBreedsButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/buttons/breedbuttons/BreedByIdButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/buttons/dogbuttons/AllDogButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/buttons/dogbuttons/DeleteDogButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/buttons/dogbuttons/DogByIdButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/buttons/dogbuttons/SaveNewDogButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/menu/buttons/dogbuttons/UpdateDogButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/repository/BreedDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/repository/CrudDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/byakovaelena/repository/DogDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DatabaseConnector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/BreedDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/CrudDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/DogDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/Breed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/Dog.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +48,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/repository/DogDao.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -33,32 +66,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "9a82d336-6119-4a79-b90c-7d0674939c99"
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;9a82d336-6119-4a79-b90c-7d0674939c99&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.entity" />
@@ -114,8 +148,21 @@
       <workItem from="1700932830984" duration="164000" />
       <workItem from="1700933047940" duration="2158000" />
       <workItem from="1700935238063" duration="9229000" />
-      <workItem from="1701023173812" duration="11616000" />
+      <workItem from="1701023173812" duration="13114000" />
+      <workItem from="1701036712248" duration="2426000" />
+      <workItem from="1701075382115" duration="17339000" />
+      <workItem from="1701173996109" duration="11376000" />
+      <workItem from="1701187314886" duration="424000" />
     </task>
+    <task id="LOCAL-00001" summary="change file readme">
+      <option name="closed" value="true" />
+      <created>1701038240868</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701038240868</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,5 +181,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="change file readme" />
+    <MESSAGE value="Create Menu to My Application" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Menu to My Application" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package org.example.entity;
+package com.byakovaelena.entity;
 public class Breed {
     private int id;
     private String name;

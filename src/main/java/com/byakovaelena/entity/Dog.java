@@ -1,6 +1,4 @@
-package org.example.entity;
-
-import org.example.dao.BreedDao;
+package com.byakovaelena.entity;
 
 public class Dog {
     private int id;

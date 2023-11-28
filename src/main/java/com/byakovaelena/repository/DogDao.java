@@ -1,7 +1,8 @@
-package org.example.dao;
+package com.byakovaelena.repository;
 
-import org.example.DatabaseConnector;
-import org.example.entity.Dog;
+import com.byakovaelena.entity.Breed;
+import com.byakovaelena.entity.Dog;
+import com.byakovaelena.DatabaseConnector;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +17,8 @@ private final Connection connection = DatabaseConnector.getConnection();
     public List<Dog> findAll() {
         List<Dog> dogs = new ArrayList<>();
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from dogs");
+            PreparedStatement ps = connection.prepareStatement
+                    ("select * from dogs join breeds on breeds.id = dogs.breed_id");
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                Dog d = new Dog();
@@ -24,6 +26,12 @@ private final Connection connection = DatabaseConnector.getConnection();
                d.setDogName(rs.getString(2));
                d.setOwnerName(rs.getString(3));
                d.setAge(rs.getInt(4));
+
+               Breed breed = new Breed();
+               breed.setId(rs.getInt(5));
+               breed.setName(rs.getString(7));
+               d.setBreed(breed);
+
                dogs.add(d);
 
             }
@@ -36,8 +44,9 @@ private final Connection connection = DatabaseConnector.getConnection();
     @Override
     public Dog findById(int id) {
         Dog dog = new Dog();
+        String sql = "select * from dogs join breeds on breeds.id = dogs.breed_id where dogs.id = ?";
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from dogs where id = ?");
+            PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
@@ -45,6 +54,11 @@ private final Connection connection = DatabaseConnector.getConnection();
                 dog.setDogName(rs.getString(2));
                 dog.setOwnerName(rs.getString(3));
                 dog.setAge(rs.getInt(4));
+
+                Breed breed = new Breed();
+                breed.setId(rs.getInt(5));
+                breed.setName(rs.getString(7));
+                dog.setBreed(breed);
             }
         }catch (SQLException d){
             d.printStackTrace();
@@ -56,10 +70,11 @@ private final Connection connection = DatabaseConnector.getConnection();
     public Dog save(Dog entity) {
         try {
             PreparedStatement ps = connection.prepareStatement
-                    ("insert into dogs (dog_name, owner_name, age) values (?, ?, ?)");
+                    ("insert into dogs (dog_name, owner_name, age, breed_id) values (?, ?, ?, ?)");
             ps.setString(1, entity.getDogName());
             ps.setString(2, entity.getOwnerName());
             ps.setInt(3, entity.getAge());
+            ps.setInt(4, entity.getBreed().getId());
 
             ps.executeUpdate();
 
@@ -82,11 +97,12 @@ private final Connection connection = DatabaseConnector.getConnection();
     public void update(Dog entity) {
         try {
             PreparedStatement ps = connection.prepareStatement
-                    ("update dogs set dog_name = ?, owner_name = ?, age = ? where id = ?");
+                    ("update dogs set dog_name = ?, owner_name = ?, age = ?, breed_id = ? where id = ?");
             ps.setString(1, entity.getDogName());
             ps.setString(2, entity.getOwnerName());
             ps.setInt(3, entity.getAge());
-            ps.setInt(4, entity.getId());
+            ps.setInt(4, entity.getBreed().getId());
+            ps.setInt(5, entity.getId());
 
             ps.executeUpdate();
         }catch (SQLException d){
